@@ -23,3 +23,22 @@ function retorno (fn){
 }
 const result = retorno (Math.random)
 console.log (result)
+
+
+// Caso 4 (retornar uma função apartir de uma função):
+function finalPrice (tax, price) {
+    return function(price){
+        return price * (1 + tax)
+    }
+} // esta função retorna o valor de um produto acréscido do imposto
+console.log (finalPrice(0.10)(20.00)) // chama a função anônima passando o preço e a taxa do imposto
+
+
+// Caso 5 (usando a técnica 'curring' armazenando um valor fixo)
+function curringTecnica(tax){
+    return function (price){
+        return price * (1 + tax)
+    }
+}
+const armanenaTax = curringTecnica(0.10) // armazena o valor fixo para a taxa do imposto
+console.log (armanenaTax(50)) // invoca a função passando só o valor do produto
