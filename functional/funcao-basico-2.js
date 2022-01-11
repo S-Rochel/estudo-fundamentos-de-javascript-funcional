@@ -27,3 +27,5 @@ console.log(potenciaDe2(8))     // 2º a função potencia retornna uma outra fu
 
 
 console.log (potencia(2)(5))    // outra maneira e chamar a função passando o parâmetro dela e em seguida já passo o parâmetro para a função anônima.
+
+
