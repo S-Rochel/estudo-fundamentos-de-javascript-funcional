@@ -17,5 +17,5 @@ promessa
     .then(valorDevolvido=> valorDevolvido * 2)              // primeira chamada do then faz 3 * 2
     .then(valorDevolvido=> valorDevolvido * 4)              // segunda chamada do then faz resultado da primeira chamada * 4
     .then(valorDevolvido=> console.log(valorDevolvido * 8)) // terceira chamada do then faz resultado da segunda chamada * 8
-    // posso fazer quantas chamadas for necessário
+    // posso fazer quantas chamadas do método then for necessário, o resultado da primeira chamada e passado para a próxima chamada.
 
