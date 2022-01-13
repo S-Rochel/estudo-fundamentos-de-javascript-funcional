@@ -35,7 +35,7 @@ setTimeout(function(){
     },1000)
 }, 1000)
 
-// com Promisses:
+// com Promises:
 function esperarTempo(tempo = 2000){
     return new Promise(function(resolve){
         setTimeout(function(){
