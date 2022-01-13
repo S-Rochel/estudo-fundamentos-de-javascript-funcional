@@ -19,3 +19,30 @@ promessa
     .then(valorDevolvido=> console.log(valorDevolvido * 8)) // terceira chamada do then faz resultado da segunda chamada * 8
     // posso fazer quantas chamadas do método then for necessário, o resultado da primeira chamada e passado para a próxima chamada.
 
+
+
+// Diferença entre Callbacks e Promisses
+// console.log("x====Diferrença entre Callbacks e Promisses====x")
+
+// com Callbacks:
+setTimeout(function(){
+    console.log("Executando Callback...")
+    setTimeout(function(){
+        console.log("Executando Callback...")
+        setTimeout(function(){
+            console.log("Executando Callback...")
+        }, 1000)
+    },1000)
+}, 1000)
+
+// com Promisses:
+function esperarTempo(tempo = 2000){
+    return new Promise(function(resolve){
+        setTimeout(function(){
+            resolve(console.log("Executando Promise..."))
+        }, tempo)
+    })
+}
+esperarTempo()
+    .then(esperarTempo)
+    .then(esperarTempo)
