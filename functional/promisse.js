@@ -31,12 +31,12 @@ setTimeout(function(){
         console.log("Executando Callback...")
         setTimeout(function(){
             console.log("Executando Callback...")
-        }, 1000)
-    },1000)
-}, 1000)
+        }, 100)
+    },100)
+}, 100)
 
 // com Promises:
-function esperarTempo(tempo = 2000){
+function esperarTempo(tempo = 100){
     return new Promise(function(resolve){
         setTimeout(function(){
             resolve(console.log("Executando Promise..."))
@@ -46,3 +46,23 @@ function esperarTempo(tempo = 2000){
 esperarTempo()
     .then(esperarTempo)
     .then(esperarTempo)
+
+
+
+
+// Exercício: (gerar números aleatórios)
+console.log("x====Números aleatórios====x")
+function gerarNumerosEntre(min, max){
+    if (min > max){
+        [max, min] = [min , max]
+    }
+    return new Promise(resolve=> {
+        const fator = max - min + 1
+        const aleatorio = parseInt(Math.random() * fator) + min
+        resolve(aleatorio)
+    })
+}
+gerarNumerosEntre(1, 60)
+    .then(num => num)
+    .then(num => `O número gerado foi ${num}`)
+    .then(console.log)
