@@ -93,6 +93,20 @@
     let num = Math.random()
     console.log(num)
 }
+{
+    console.log(`Retorna um número inteiro de 0 a 10: ${Math.floor(Math.random() * 11)}`)
+}
+{
+    // Esta função JavaScript sempre retorna um número aleatório entre min (incluído) e max (excluído):
+    const min = 6, max = 8
+    console.log(`Retorna um número inteiro entre o min e o max - 1: ${Math.floor(Math.random() * (max - min)) + min}`)
+}
+{
+    // Esta função JavaScript sempre retorna um número aleatório entre min e max (ambos incluídos):
+    const min = 6, max = 8
+    console.log(`Retorna um número inteiro entre o min e o max: ${Math.floor(Math.random() * (max - min + 1)) + min}`)
+}
+
 
 
 // Math.log(x) - retorna o logaritmo natural de x.
