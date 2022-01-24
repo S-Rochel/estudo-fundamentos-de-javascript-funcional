@@ -33,4 +33,52 @@ obs: Na verdade, você não precisa usar o construtor de função. O exemplo aci
 */
 
 
-// Função de elevação
+// Funções de auto-invocação - As expressões de função podem ser "auto-invocadas". As expressões de função serão executadas automaticamente se a expressão for seguida por () e ter () adicionado ao redor da função para indicar que é uma expressão de função. Você não pode auto-invocar uma declaração de função.
+// Exemplo:
+{
+        (function () {
+                let x = "Hello!!";
+                console.log(x)
+              })();
+}
+
+
+// Diferença entre método e construtor
+/*
+Uma função definida como propriedade de um objeto é chamada de método para o objeto.
+Uma função projetada para criar novos objetos é chamada de construtor de objetos.
+*/
+
+// O objeto de argumentos.
+/*
+As funções JavaScript têm um objeto embutido chamado de objeto de argumentos.
+O objeto argument contém uma matriz dos argumentos usados ​​quando a função foi chamada (invocada).
+*/
+// Dessa forma, você pode simplesmente usar uma função para encontrar (por exemplo) o valor mais alto em uma lista de números.
+{
+        x = findMax(1, 123, 500, 115, 44, 88);
+
+        function findMax() {
+          let max = -Infinity;
+          for (let i = 0; i < arguments.length; i++) {
+            if (arguments[i] > max) {
+              max = arguments[i];
+            }
+          }
+          return max;
+       }
+       console.log(x)
+}
+// Somar todos os valores de entrada.
+{
+        x = sumAll(1, 123, 500, 115, 44, 88);
+
+        function sumAll() {
+          let sum = 0;
+          for (let i = 0; i < arguments.length; i++) {
+            sum += arguments[i];
+          }
+          return sum;
+        }
+        console.log(x)
+}
