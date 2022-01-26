@@ -184,3 +184,40 @@ Muitos programadores usam um caractere de sublinhado _ antes do nome da propried
       myCar.carname = "Volvo";
       console.log(myCar.carname)
 }
+
+
+
+// Métodos estáticos JavaScript.
+/*
+Os métodos de classe estática são definidos na própria classe.
+Você não pode chamar um método static em um objeto, apenas em uma classe de objeto.
+*/
+// Exemplo:
+{
+    class Car {
+        constructor(name) {
+          this.name = name;
+        }
+        static hello() {
+          return "Hello!!";
+        }
+    }
+      
+    let myCar = new Car("Ford");
+    console.log("Static =>", Car.hello()) 
+    // myCar.hello() não funciona.
+}
+// Se você quiser usar o objeto myCar dentro do método static, pode enviá-lo como parâmetro.
+// Exemplo:
+{
+    class Car {
+        constructor(name) {
+          this.name = name;
+        }
+        static hello(x) {
+          return "Hello " + x.name;
+        }
+      }
+      let myCar = new Car("Ford");
+      console.log("static =>", Car.hello(myCar))
+}
